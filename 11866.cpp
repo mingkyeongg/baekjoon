@@ -31,21 +31,3 @@ int main(void)
 	}
 	cout << '>';
 }
-
-int partition(int *a, int low, int high)
-{
-	int left, right;
-	int pivot_item;
-	pivot_item = a[low];
-	left = low;
-	right = high;
-	while (left < right) 
-	{
-		while (a[left] <= pivot_item) left++;
-		while (a[right] >= pivot_item) right--;
-		if (left < right) swap(a, left, right);
-	}
-	a[low] = a[right];
-	a[right] = pivot_item;
-	return right;
-}
